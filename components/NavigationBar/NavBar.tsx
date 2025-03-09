@@ -1,11 +1,13 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import Image from "next/image";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
+  const [logoSrc, setLogoSrc] = useState("/assets/logo(white).svg");
 
   const handleNav = () => {
     setNav(!nav);
@@ -16,12 +18,19 @@ const NavBar = () => {
       if (window.scrollY >= 90) {
         setColor("#ffffff");
         setTextColor("#000000");
+        setLogoSrc("/assets/logo(black).svg");
       } else {
         setColor("transparent");
         setTextColor("#ffffff");
+        setLogoSrc("/assets/logo(white).svg");
       }
     };
     window.addEventListener("scroll", changeColor);
+    
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
   }, []);
 
   return (
@@ -31,9 +40,20 @@ const NavBar = () => {
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            MK
-          </h1>
+          <div className="flex items-center">
+            <div className="relative h-16 w-16 mr-3">
+              <Image 
+                src={logoSrc} 
+                alt="GUPC Logo" 
+                width={64} 
+                height={64}
+                className="transition-all duration-300"
+              />
+            </div>
+            <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
+              GUPC
+            </h1>
+          </div>
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4">
@@ -43,7 +63,7 @@ const NavBar = () => {
             <Link href="/#gallery">Gallery</Link>
           </li>
           <li className="p-4">
-            <Link href="/#portfolio">My roads</Link>
+            <Link href="/committee">Committee</Link>
           </li>
           <li className="p-4">
             <Link href="/#contact">Contact</Link>
@@ -67,6 +87,18 @@ const NavBar = () => {
           }
         >
           <ul>
+            <li className="flex justify-center items-center mb-8">
+              <div className="relative h-16 w-16 mr-3">
+                <Image 
+                  src="/assets/logo(white).svg" 
+                  alt="GUPC Logo" 
+                  width={64} 
+                  height={64}
+                  className="transition-all duration-300"
+                />
+              </div>
+              <h2 className="text-5xl font-bold text-white">GUPC</h2>
+            </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
@@ -83,7 +115,7 @@ const NavBar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#portfolio">My roads</Link>
+              <Link href="/committee">Committee</Link>
             </li>
             <li
               onClick={handleNav}

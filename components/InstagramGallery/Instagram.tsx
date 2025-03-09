@@ -1,17 +1,17 @@
 import React from "react";
-import IgImg1 from "../../assets/img-1.jpeg";
-import IgImg2 from "../../assets/img-2.jpeg";
-import IgImg3 from "../../assets/img-3.jpeg";
-import IgImg4 from "../../assets/img-4.jpeg";
-import IgImg5 from "../../assets/img-5.jpeg";
-import IgImg6 from "../../assets/img-6.jpeg";
+import IgImg1 from "../../assets/new/new1.jpg";
+import IgImg2 from "../../assets/new/new2.jpeg";
+import IgImg3 from "../../assets/new/new3.jpg";
+import IgImg4 from "../../assets/new/new4.jpg";
+import IgImg5 from "../../assets/new/new5.jpg";
+import IgImg6 from "../../assets/new/new.jpg";
 import InstagramImg from "./InstagramImg";
 
 const Instagram = () => {
   return (
     <div className="max-w-[1240px] mx-auto text-center py-4">
-      <p className="text-2xl font-bold">Follow me on Instagram</p>
-      <p className="pb-4">@YourName</p>
+      <p className="text-2xl font-bold">Follow us on Social Media</p>
+      <p className="pb-4">@wearegupc</p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 p-4">
         <InstagramImg socialImg={IgImg1} />
         <InstagramImg socialImg={IgImg2} />

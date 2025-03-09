@@ -26,7 +26,7 @@ const Slider = ({ slides }: Props) => {
     <div id="gallery" className="max-w-[1240px] mx-auto">
       <h1 className="text-2xl font-bold text-center p-4 py-0">Gallery</h1>
       <div className="relative flex justify-center p-4">
-        {SliderData.map((slide, index) => {
+        {slides.map((slide, index) => {
           return (
             <div
               key={index}
@@ -36,21 +36,22 @@ const Slider = ({ slides }: Props) => {
             >
               <FaArrowCircleLeft
                 onClick={prevSlide}
-                className="absolute top-[50%] left-[30px] text-white/70 cursor-pointer select-none z-[2]"
+                className="absolute top-[50%] left-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
                 size={50}
               />
               {index === current && (
-                <Image
-                  src={slide.image}
-                  alt="/"
-                  width="1440"
-                  height="600"
-                  objectFit="cover"
-                />
+                <div className="relative w-full h-[600px]">
+                  <img
+                    src={slide.image}
+                    alt="Slider image"
+                    className="max-w-full max-h-full mx-auto"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
               )}
               <FaArrowCircleRight
                 onClick={nextSlide}
-                className="absolute top-[50%] right-[30px] text-white/70 cursor-pointer select-none z-[2]"
+                className="absolute top-[50%] right-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
                 size={50}
               />
             </div>

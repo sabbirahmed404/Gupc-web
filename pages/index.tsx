@@ -6,23 +6,27 @@ import { SliderData } from "../components/Slider/SliderData";
 import Instagram from "../components/InstagramGallery/Instagram";
 import Portfolio from "../components/Portfolio/Portfolio";
 import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Keep moving</title>
+        <title>GUPC Official Page</title>
         <meta
           name="description"
           content="Created as template for future work"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="200x200" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
       </Head>
-      <Hero heading="Let's go jogging" message="Find your road" />
+      <Hero heading="Green University Photography Club" message="See some of the work from GUPC" />
       <Slider slides={SliderData} />
       <Instagram />
       <Portfolio />
       <Contact />
+      <Footer />
     </>
   );
 };
