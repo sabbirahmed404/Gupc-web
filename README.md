@@ -1,117 +1,162 @@
-### What you can find useful in this project: 
+# GUPC - Green University Photography Club Website
 
-- [x] Responsive design (mobile, tablet, desktop)
-- [x] 'NavBar' freezed when you start scrolling
-- [x] Simple 'Slider' implementation
-- [x] Project build based on TypeScript using Nextjs, TailwindCss
+<p align="center">
+  <img src="public/assets/logo(black).svg" alt="GUPC Logo" width="150" />
+</p>
 
--------
+<p align="center">
+  A modern, responsive landing page built with Next.js and Tailwind CSS for the Green University Photography Club.
+</p>
 
-### Also below some more interesting things i have learned
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#folder-structure">Folder Structure</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
 
-- Example of freezed NavBar [components/NavigationBar/NavBar.tsx](components/NavigationBar/NavBar.tsx)
+## Features
 
-```tsx
-  useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
-        setTextColor("#000000");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-      }
-    };
-    window.addEventListener("scroll", changeColor);
-  }, []);
-```
---------
+### ✨ Modern UI/UX
+- Sleek and responsive design
+- Smooth animations and transitions
+- Optimized for all devices
 
-- Slider [components/Slider/Slider.tsx](components/Slider/Slider.tsx)
+### 📱 Fully Responsive
+- Mobile-first approach
+- Adapts to any screen size
+- Optimized navigation for small screens
 
-```tsx
-const Slider = ({ slides }: Props) => {
-  const [current, setCurrent] = useState(0);
-  const length = slides.length;
+### 🖼️ Dynamic Photo Gallery
+- Showcase photography work
+- Image slider with smooth transitions
+- Instagram-style gallery section
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+### 👥 Committee Page
+- Showcase club members and leadership
+- Year-based filtering (2024, 2025)
+- Categorized display (Moderators, Advisors, Executives)
 
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
+### 📞 Contact Section
+- Easy to use contact form
+- Social media integration
+- Location map
 
-  return (
-    <div id="gallery" className="max-w-[1240px] mx-auto">
-      <h1 className="text-2xl font-bold text-center p-4">Gallery</h1>
-      <div className="relative flex justify-center p-4">
-        {SliderData.map((slide, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                index === current
-                  ? "opacity-[1] ease-in duration-1000"
-                  : "opacity-0"
-              }
-            >
-              <FaArrowCircleLeft
-                onClick={prevSlide}
-                className="absolute top-[50%] left-[30px] text-white/70 cursor-pointer select-none z-[2]"
-                size={50}
-              />
-              {index === current && (
-                <Image
-                  src={slide.image}
-                  alt="/"
-                  width="1440"
-                  height="600"
-                  objectFit="cover"
-                />
-              )}
-              <FaArrowCircleRight
-                onClick={nextSlide}
-                className="absolute top-[50%] right-[30px] text-white/70 cursor-pointer select-none z-[2]"
-                size={50}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment**: Vercel/Netlify
+
+## Demo
+
+Visit the live demo: [https://gupc-website.vercel.app](https://gupc-website.vercel.app)
+
+![Website Preview](public/assets/preview.png)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/nextjs-tailwind-landing-page.git
+cd nextjs-tailwind-landing-page
 ```
 
---------
-
-- Set the root to navigate to different part of the page (please do not forget to put `id="portfolio"` for smooth scrolling)
-```js
-<Link href="/portfolio">My roads</Link>
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
 ```
 
-```js
-const Portfolio = () => {
-    return (
-        <div id="portfolio" className="max-w-[1240px] mx-auto py-16 text-center">
-            <h1 className="font-bold text-2xl p-4">Amazing roads</h1>
-            <div className="grid grid-rows-none md:grid-cols-5 p-4 gap-4">
-                <div className="w-full h-full col-span-2 md:col-span-3 row-span-2">
-                    <Image
-                        src="https://images.unsplash.com/photo-1520595439914-fcbb3a25d924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
-                        alt="/"
-                        layout="responsive"
-                        width="677"
-                        height="451"
-                    />
+3. Create a `.env.local` file in the root directory and add your environment variables (if needed):
 ```
----------
+NEXT_PUBLIC_EXAMPLE_VAR=your_value_here
+```
 
+## Usage
 
-#### Reference:
-- thanks goes to @Clint Briley [youtube](https://www.youtube.com/watch?v=HVyct9EUNP8), [repo](https://github.com/fireclint/NextJS-Tailwind-Responsive)
-- try it out [Pesticide for Chrome](https://chrome.google.com/webstore/detail/pesticide-for-chrome/bakpbgckdnepkmkeaiomhmfcnejndkbi)
+### Development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Build for production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Start production server
+
+```bash
+npm start
+# or
+yarn start
+```
+
+## Folder Structure
+
+```
+nextjs-tailwind-landing-page/
+├── components/           # React components
+│   ├── Committee/        # Committee page components
+│   ├── Contact/          # Contact form components
+│   ├── Footer/           # Footer component
+│   ├── Hero/             # Hero section component
+│   ├── InstagramGallery/ # Instagram gallery components
+│   ├── NavigationBar/    # Navigation components
+│   ├── Portfolio/        # Portfolio components
+│   └── Slider/           # Image slider components
+├── pages/                # Next.js pages
+│   ├── _app.tsx          # Custom App component
+│   ├── _document.tsx     # Custom Document component
+│   ├── index.tsx         # Home page
+│   └── committee.tsx     # Committee page
+├── public/               # Static assets
+│   └── assets/           # Images, SVGs, etc.
+├── styles/               # Global styles
+│   └── globals.css       # Global CSS
+├── .next/                # Next.js build output
+├── node_modules/         # Node.js dependencies
+├── .gitignore            # Git ignore file
+├── next.config.js        # Next.js configuration
+├── package.json          # Project dependencies
+├── postcss.config.js     # PostCSS configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+└── README.md             # Project documentation
+```
+
+## Contributing
+
+Contributions are always welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please make sure to update tests as appropriate and follow the code style of the project.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<p align="center">
+  Made with ❤️ by the Green University Photography Club
+</p>
