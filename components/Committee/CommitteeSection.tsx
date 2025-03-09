@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface MemberCard {
   name: string;
@@ -64,13 +63,11 @@ const committeeMembers: MemberCard[] = [
 const MemberCard = ({ name, role, image }: MemberCard) => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105">
-      <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden">
-        <Image
+      <div className="w-32 h-32 mb-4 rounded-full overflow-hidden">
+        <img
           src={image}
           alt={name}
-          width={128}
-          height={128}
-          className="object-cover rounded-full"
+          className="w-full h-full object-cover rounded-full"
         />
       </div>
       <h3 className="text-xl font-semibold text-gray-800">{name}</h3>

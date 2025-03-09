@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import Image from "next/image";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -41,13 +40,11 @@ const NavBar = () => {
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
           <div className="flex items-center">
-            <div className="relative h-16 w-16 mr-3">
-              <Image 
+            <div className="h-16 w-16 mr-3">
+              <img 
                 src={logoSrc} 
                 alt="GUPC Logo" 
-                width={64} 
-                height={64}
-                className="transition-all duration-300"
+                className="w-full h-full transition-all duration-300"
               />
             </div>
             <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
@@ -88,13 +85,11 @@ const NavBar = () => {
         >
           <ul>
             <li className="flex justify-center items-center mb-8">
-              <div className="relative h-16 w-16 mr-3">
-                <Image 
+              <div className="h-16 w-16 mr-3">
+                <img 
                   src="/assets/logo(white).svg" 
                   alt="GUPC Logo" 
-                  width={64} 
-                  height={64}
-                  className="transition-all duration-300"
+                  className="w-full h-full transition-all duration-300"
                 />
               </div>
               <h2 className="text-5xl font-bold text-white">GUPC</h2>

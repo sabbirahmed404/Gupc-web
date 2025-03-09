@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
@@ -40,12 +39,12 @@ const Slider = ({ slides }: Props) => {
                 size={50}
               />
               {index === current && (
-                <div className="relative w-full h-[600px]">
+                <div className="relative w-full h-[600px] flex items-center justify-center">
                   <img
                     src={slide.image}
                     alt="Slider image"
-                    className="max-w-full max-h-full mx-auto"
-                    style={{ objectFit: "contain" }}
+                    className="max-h-[600px] max-w-full object-contain"
+                    style={{ margin: '0 auto' }}
                   />
                 </div>
               )}

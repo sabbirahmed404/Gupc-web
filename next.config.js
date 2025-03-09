@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["images.unsplash.com"],
+    unoptimized: true
   },
   // Allow SVG files to be imported
   webpack(config) {

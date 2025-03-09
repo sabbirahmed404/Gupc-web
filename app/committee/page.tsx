@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import CommitteeSection from '@/components/Committee/CommitteeSection';
-import CommitteeTabs from '@/components/Committee/CommitteeTabs';
+import CommitteeSection from '../../components/Committee/CommitteeSection';
+import CommitteeTabs from '../../components/Committee/CommitteeTabs';
 
 export default function Committee() {
   const [activeYear, setActiveYear] = useState('2025');
