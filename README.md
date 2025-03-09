@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  A modern, responsive landing page built with Next.js and Tailwind CSS for the Green University Photography Club.
+  A modern, responsive landing page was built with Next.js and Tailwind CSS for the Green University Photography Club. 
 </p>
 
 <p align="center">
@@ -158,5 +158,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 <p align="center">
-  Made with ❤️ by the Green University Photography Club
+  Used the template from https://github.com/Ebazhanov/nextjs-tailwind-landing-page
 </p>
