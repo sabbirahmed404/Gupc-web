@@ -12,18 +12,24 @@ const NavBar = () => {
     setNav(!nav);
   };
 
+  // Function to update colors based on scroll position
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor("#ffffff");
+      setTextColor("#000000");
+      setLogoSrc("/assets/logo(black).svg");
+    } else {
+      setColor("transparent");
+      setTextColor("#ffffff");
+      setLogoSrc("/assets/logo(white).svg");
+    }
+  };
+
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
-        setTextColor("#000000");
-        setLogoSrc("/assets/logo(black).svg");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-        setLogoSrc("/assets/logo(white).svg");
-      }
-    };
+    // Call changeColor immediately on mount to set initial state correctly
+    changeColor();
+    
+    // Add event listener for scroll
     window.addEventListener("scroll", changeColor);
     
     // Cleanup event listener on component unmount
@@ -33,7 +39,20 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: color }} className="w-full ease-in duration-300">
+    <nav className="w-full transition-all duration-300" 
+         style={{
+           backgroundColor: color,
+           position: 'fixed',
+           top: 0,
+           left: 0,
+           right: 0,
+           zIndex: 9999,
+           margin: 0,
+           padding: 0,
+           border: 'none',
+           boxShadow: 'none',
+           height: 'auto'
+         }}>
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
           <div className="flex items-center">
@@ -64,20 +83,21 @@ const NavBar = () => {
           </li>
         </ul>
 
-        {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden">
+        {/* Mobile Button - Updated with conditional rendering */}
+        <div onClick={handleNav} className="block sm:hidden z-20">
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: textColor }} />
+            <AiOutlineClose size={24} style={{ color: "white" }} /> // Always white for visibility
           ) : (
             <AiOutlineMenu size={20} style={{ color: textColor }} />
           )}
         </div>
+        
         {/* Mobile Menu */}
         <div
           className={
             nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 z-10"
+              : "sm:hidden fixed top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 z-10"
           }
         >
           <ul>
@@ -118,7 +138,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

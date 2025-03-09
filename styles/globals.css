@@ -2,9 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* More aggressive CSS Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: #fff; /* Ensure white background */
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'Raleway', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
 }
 
 .custom-img {
@@ -12,6 +36,8 @@ html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
 }
 
 @media (max-width: 768px) {
@@ -21,17 +47,16 @@ html {
     }
 }
 
-/* Stacking context fixes */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Force navbar to top layer */
+/* Force navbar to top layer - fixed at the very top */
 nav, .navbar, header {
-    position: relative;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     z-index: 9999 !important;
+    box-shadow: none !important; /* Remove any box-shadow */
+    border: none !important; /* Remove any borders */
+    background-color: transparent; /* Ensure transparent by default */
 }
 
 /* Force footer to bottom layer */
@@ -41,8 +66,14 @@ footer {
     margin-top: auto;
 }
 
+/* Main content needs padding to account for fixed navbar */
 main, .main-content {
     position: relative;
     z-index: 1;
     flex: 1;
+}
+
+/* Ensure no gap between navbar and content */
+.pt-16, .pt-20 {
+    padding-top: 0 !important;
 }

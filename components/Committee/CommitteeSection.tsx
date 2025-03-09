@@ -10,9 +10,9 @@ interface MemberCard {
 
 const committeeMembers: MemberCard[] = [
   {
-    name: 'Dr. John Doe',
+    name: 'Baktiar Alam Bulbul',
     role: 'Faculty Moderator',
-    image: '/assets/placeholder.svg',
+    image: '/assets/new/new1.jpg',
     category: 'Moderator',
     year: '2025',
   },
@@ -33,9 +33,9 @@ const committeeMembers: MemberCard[] = [
   {
     name: 'Bob Wilson',
     role: 'Vice President',
-    image: '/assets/placeholder.svg',
+    image: '/assets/img-7.jpg',
     category: 'Executive',
-    year: '2025',
+    year: '2023',
   },
   {
     name: 'Charlie Brown',
@@ -62,7 +62,7 @@ const committeeMembers: MemberCard[] = [
 
 const MemberCard = ({ name, role, image }: MemberCard) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105">
+    <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 mx-auto max-w-[250px]">
       <div className="w-32 h-32 mb-4 rounded-full overflow-hidden">
         <img
           src={image}
@@ -70,8 +70,8 @@ const MemberCard = ({ name, role, image }: MemberCard) => {
           className="w-full h-full object-cover rounded-full"
         />
       </div>
-      <h3 className="text-xl font-semibold text-gray-800">{name}</h3>
-      <p className="text-gray-600 mt-2">{role}</p>
+      <h3 className="text-xl font-semibold text-gray-800 text-center">{name}</h3>
+      <p className="text-gray-600 mt-2 text-center">{role}</p>
     </div>
   );
 };
@@ -92,8 +92,8 @@ const CommitteeSection = ({ activeYear = '2025' }: CommitteeSectionProps) => {
 
         return (
           <div key={category} className="mb-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">{category}s</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">{category}s</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
               {categoryMembers.map((member, index) => (
                 <MemberCard key={`${member.name}-${index}`} {...member} />
               ))}
