@@ -33,10 +33,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div
-      style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
-    >
+    <div style={{ backgroundColor: color }} className="w-full ease-in duration-300">
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
           <div className="flex items-center">
@@ -47,12 +44,12 @@ const NavBar = () => {
                 className="w-full h-full transition-all duration-300"
               />
             </div>
-            <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
+            <h1 style={{ color: textColor }} className="font-bold text-4xl">
               GUPC
             </h1>
           </div>
         </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
+        <ul style={{ color: textColor }} className="hidden sm:flex">
           <li className="p-4">
             <Link href="/">Home</Link>
           </li>
@@ -68,11 +65,11 @@ const NavBar = () => {
         </ul>
 
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <div onClick={handleNav} className="block sm:hidden">
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20} style={{ color: textColor }} />
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={20} style={{ color: textColor }} />
           )}
         </div>
         {/* Mobile Menu */}

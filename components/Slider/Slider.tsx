@@ -23,35 +23,34 @@ const Slider = ({ slides }: Props) => {
 
   return (
     <div id="gallery" className="max-w-[1240px] mx-auto">
-      <h1 className="text-2xl font-bold text-center p-4 py-0">Gallery</h1>
-      <div className="relative flex justify-center p-4">
+      <h1 className="text-2xl font-bold text-center mb-2">Gallery</h1>
+      <div className="relative flex justify-center">
         {slides.map((slide, index) => {
           return (
             <div
               key={index}
               className={
-                index === current ? "opacity-[1] ease-in" : "opacity-0"
+                index === current ? "opacity-[1] ease-in w-full" : "opacity-0"
               }
             >
               <FaArrowCircleLeft
                 onClick={prevSlide}
-                className="absolute top-[50%] left-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
-                size={50}
+                className="absolute top-[50%] left-[10px] md:left-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
+                size={30}
               />
               {index === current && (
-                <div className="relative w-full h-[600px] flex items-center justify-center">
+                <div className="w-full h-[300px] md:h-[500px] flex items-center justify-center">
                   <img
                     src={slide.image}
                     alt="Slider image"
-                    className="max-h-[600px] max-w-full object-contain"
-                    style={{ margin: '0 auto' }}
+                    className="h-full w-auto max-w-full object-contain mx-auto"
                   />
                 </div>
               )}
               <FaArrowCircleRight
                 onClick={nextSlide}
-                className="absolute top-[50%] right-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
-                size={50}
+                className="absolute top-[50%] right-[10px] md:right-[30px] text-black/90 bg-white/50 rounded-full cursor-pointer select-none z-[2] hover:text-black hover:bg-white/80 transition-all"
+                size={30}
               />
             </div>
           );

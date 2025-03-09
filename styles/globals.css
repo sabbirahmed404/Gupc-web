@@ -9,4 +9,40 @@ html {
 
 .custom-img {
     background-image: url("../assets/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .custom-img {
+        background-position: center;
+        background-attachment: scroll; /* Better performance on mobile */
+    }
+}
+
+/* Stacking context fixes */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Force navbar to top layer */
+nav, .navbar, header {
+    position: relative;
+    z-index: 9999 !important;
+}
+
+/* Force footer to bottom layer */
+footer {
+    position: relative;
+    z-index: 0 !important;
+    margin-top: auto;
+}
+
+main, .main-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
 }

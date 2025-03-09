@@ -1,18 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="relative text-white py-16">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-black/80 z-10"></div>
+    <footer className="relative text-white py-16 mt-auto">
+      {/* Dark Background */}
+      <div className="absolute inset-0 bg-black"></div>
       
-      {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-20"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+      {/* Content */}
+      <div className="relative z-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* About */}
           <div>
