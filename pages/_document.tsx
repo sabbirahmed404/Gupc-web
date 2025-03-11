@@ -17,10 +17,10 @@ export default function Document() {
         {/* Open Graph / Social Media Meta Tags */}
         <meta property="og:title" content="Green University Photography Club" />
         <meta property="og:description" content="Official website of Green University Photography Club (GUPC)" />
-        <meta property="og:image" content="/assets/meta/link.png" />
+        <meta property="og:image" content="/assets/link.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="/assets/meta/link.png" />
+        <meta name="twitter:image" content="/assets/link.png" />
         <style dangerouslySetInnerHTML={{ __html: `
           /* Debug styles to help identify layout issues */
           /* Uncomment the line below to see element boundaries */
