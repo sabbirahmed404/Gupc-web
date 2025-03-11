@@ -21,7 +21,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="200x200" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </Head>
-      <Hero heading="Green University Photography Club" message="See some of the work from GUPC" />
+      <Hero 
+        heading="Green University Photography Club" 
+        message="See some of the work from GUPC" 
+        useTypewriter={true} 
+      />
       <Slider slides={SliderData} />
       <Instagram />
       <Portfolio />

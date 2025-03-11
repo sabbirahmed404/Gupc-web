@@ -11,7 +11,8 @@
   "dependencies": {
     "next": "^12.3.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

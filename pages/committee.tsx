@@ -25,7 +25,7 @@ const Committee: NextPage = () => {
         <div className="flex items-center justify-center h-[30vh] flex-col" style={{ paddingTop: '80px' }}>
           {/* Dark overlay only on the top part */}
           <div className="absolute inset-0 bg-black/70 z-[1]" />
-          <div className="relative p-5 text-white z-[3] flex flex-col items-center space-y-4">
+          <div className="relative p-5 text-white z-[3] flex flex-col items-center space-y-4" style={{ marginTop: '40px' }}>
             <h1 className="text-5xl font-bold text-center">Our Committee</h1>
             <p className="text-xl text-center text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
               Meet the dedicated team behind GUPC
@@ -34,7 +34,7 @@ const Committee: NextPage = () => {
         </div>
         
         {/* Middle section with tabs centered - added 2px margin-top */}
-        <div className="relative pb-16 z-[1] flex justify-center" style={{ marginTop: '15px' }}>
+        <div className="relative pb-16 z-[1] flex justify-center" style={{ marginTop: '40px' }}>
           {/* Year tabs centered with semi-transparent background */}
           <div className="relative z-[3] bg-black/30 inline-block mx-auto p-1 rounded-lg mb-8">
             <CommitteeTabs activeYear={activeYear} onYearChange={setActiveYear} />
