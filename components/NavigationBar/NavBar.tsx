@@ -218,11 +218,11 @@ const NavBar = () => {
         </ul>
 
         {/* Mobile Button - Updated with conditional rendering */}
-        <div onClick={handleNav} className="block sm:hidden z-20">
+        <div onClick={handleNav} className={`block sm:hidden z-20 ${color === 'transparent' ? 'mt-10' : ''}`}>
           {nav ? (
-            <AiOutlineClose size={36} style={{ color: "white" }} /> // Increased from 24 to 28
+            <AiOutlineClose size={36} style={{ color: "white" }} />
           ) : (
-            <AiOutlineMenu size={32} style={{ color: textColor }} /> // Increased from 20 to 24
+            <AiOutlineMenu size={32} style={{ color: textColor }} />
           )}
         </div>
         

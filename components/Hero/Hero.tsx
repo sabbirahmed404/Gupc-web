@@ -23,7 +23,7 @@ const Hero = ({
     <div className="relative flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover custom-img" style={{ marginTop: 0, paddingTop: 0 }}>
       <div className="absolute inset-0 bg-black/70 z-[1]" />
       <div 
-        className="relative p-10 text-center text-white z-[2] max-w-[800px] mx-auto"
+        className="relative p-5 text-center text-white z-[2] max-w-[800px] mx-auto"
         style={{ paddingTop: contentPaddingTop }}
       >
         {useTypewriter ? (
