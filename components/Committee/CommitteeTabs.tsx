@@ -15,7 +15,7 @@ const CommitteeTabs = ({ activeYear, onYearChange }: CommitteeTabsProps) => {
           <button
             key={year}
             onClick={() => onYearChange(year)}
-            className={`px-8 py-3 text-base font-medium rounded-md transition-all duration-200 mx-2 ${
+            className={`px-8 py-4 text-base font-medium rounded-md transition-all duration-200 mx-2 ${
               activeYear === year
                 ? 'bg-white text-black'
                 : 'text-white hover:bg-white hover:text-black'

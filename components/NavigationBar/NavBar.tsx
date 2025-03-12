@@ -166,10 +166,10 @@ const NavBar = () => {
            boxShadow: 'none',
            height: 'auto'
          }}>
-      <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
+      <div className="max-w-[1240px] m-auto flex justify-between items-center sm:p-4 p-6 text-white">  {/* Changed p-4 to sm:p-4 p-6 */}
         <Link href="/">
-          <div className="flex items-center">
-            <div className="h-20 w-20 mr-3">
+          <div className="flex items-center relative h-14">  {/* Changed h-16 to h-14 to reduce height */}
+            <div className={`${logoSrc.includes('white') ? 'h-32 w-32 -top-1' : 'h-[88px] w-[88px] -top-3.4'} absolute`}>
               <img 
                 src={logoSrc} 
                 alt="GUPC Logo" 
@@ -220,9 +220,9 @@ const NavBar = () => {
         {/* Mobile Button - Updated with conditional rendering */}
         <div onClick={handleNav} className="block sm:hidden z-20">
           {nav ? (
-            <AiOutlineClose size={24} style={{ color: "white" }} /> // Always white for visibility
+            <AiOutlineClose size={36} style={{ color: "white" }} /> // Increased from 24 to 28
           ) : (
-            <AiOutlineMenu size={20} style={{ color: textColor }} />
+            <AiOutlineMenu size={32} style={{ color: textColor }} /> // Increased from 20 to 24
           )}
         </div>
         
@@ -236,14 +236,13 @@ const NavBar = () => {
         >
           <ul>
             <li className="flex justify-center items-center mb-8">
-              <div className="h-16 w-16 mr-3">
+              <div className="h-24 w-24 mr-3">  {/* Changed from h-16 w-16 to h-24 w-24 */}
                 <img 
                   src="/assets/logo(white).svg" 
                   alt="GUPC Logo" 
                   className="w-full h-full transition-all duration-300"
                 />
               </div>
-              <h2 className="text-5xl font-bold text-white">GUPC</h2>
             </li>
             <li
               onClick={handleNav}
