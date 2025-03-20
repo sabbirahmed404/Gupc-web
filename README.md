@@ -55,7 +55,7 @@
 
 ## Demo
 
-Visit the live demo: [https:/gupc.vercel.app](https://gupc-website.vercel.app)
+Visit the live demo: [https://gupc.vercel.app](https://gupc-website.vercel.app)
 
 ![Website Preview](public/assets/preview.png)
 
